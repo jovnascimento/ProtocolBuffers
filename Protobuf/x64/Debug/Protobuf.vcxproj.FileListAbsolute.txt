@@ -1,0 +1,1 @@
+C:\Users\jovna\Documents\GitHub\ProtocolBuffers\Protobuf\x64\Debug\Protobuf.vcxproj.CopyComplete
