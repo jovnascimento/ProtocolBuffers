@@ -178,20 +178,14 @@ class Mensagem final :
 
   enum : int {
     kMsgFieldNumber = 2,
-    kRespMsgFieldNumber = 3,
-    kNomeFieldNumber = 4,
-    kConteudoFieldNumber = 5,
-    kRespConteudoFieldNumber = 6,
+    kNomeFieldNumber = 3,
+    kConteudoFieldNumber = 4,
     kIdFieldNumber = 1,
-    kNum1FieldNumber = 7,
-    kNum2FieldNumber = 8,
-    kSomaFieldNumber = 9,
+    kNum1FieldNumber = 5,
+    kNum2FieldNumber = 6,
+    kSomaFieldNumber = 7,
   };
-  // optional string msg = 2;
-  bool has_msg() const;
-  private:
-  bool _internal_has_msg() const;
-  public:
+  // string msg = 2;
   void clear_msg();
   const std::string& msg() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -205,29 +199,7 @@ class Mensagem final :
   std::string* _internal_mutable_msg();
   public:
 
-  // optional string resp_msg = 3;
-  bool has_resp_msg() const;
-  private:
-  bool _internal_has_resp_msg() const;
-  public:
-  void clear_resp_msg();
-  const std::string& resp_msg() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_resp_msg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_resp_msg();
-  PROTOBUF_NODISCARD std::string* release_resp_msg();
-  void set_allocated_resp_msg(std::string* resp_msg);
-  private:
-  const std::string& _internal_resp_msg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_resp_msg(const std::string& value);
-  std::string* _internal_mutable_resp_msg();
-  public:
-
-  // optional string nome = 4;
-  bool has_nome() const;
-  private:
-  bool _internal_has_nome() const;
-  public:
+  // string nome = 3;
   void clear_nome();
   const std::string& nome() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -241,11 +213,7 @@ class Mensagem final :
   std::string* _internal_mutable_nome();
   public:
 
-  // optional string conteudo = 5;
-  bool has_conteudo() const;
-  private:
-  bool _internal_has_conteudo() const;
-  public:
+  // string conteudo = 4;
   void clear_conteudo();
   const std::string& conteudo() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -259,24 +227,6 @@ class Mensagem final :
   std::string* _internal_mutable_conteudo();
   public:
 
-  // optional string resp_conteudo = 6;
-  bool has_resp_conteudo() const;
-  private:
-  bool _internal_has_resp_conteudo() const;
-  public:
-  void clear_resp_conteudo();
-  const std::string& resp_conteudo() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_resp_conteudo(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_resp_conteudo();
-  PROTOBUF_NODISCARD std::string* release_resp_conteudo();
-  void set_allocated_resp_conteudo(std::string* resp_conteudo);
-  private:
-  const std::string& _internal_resp_conteudo() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_resp_conteudo(const std::string& value);
-  std::string* _internal_mutable_resp_conteudo();
-  public:
-
   // int32 id = 1;
   void clear_id();
   int32_t id() const;
@@ -286,11 +236,7 @@ class Mensagem final :
   void _internal_set_id(int32_t value);
   public:
 
-  // optional int32 num1 = 7;
-  bool has_num1() const;
-  private:
-  bool _internal_has_num1() const;
-  public:
+  // int32 num1 = 5;
   void clear_num1();
   int32_t num1() const;
   void set_num1(int32_t value);
@@ -299,11 +245,7 @@ class Mensagem final :
   void _internal_set_num1(int32_t value);
   public:
 
-  // optional int32 num2 = 8;
-  bool has_num2() const;
-  private:
-  bool _internal_has_num2() const;
-  public:
+  // int32 num2 = 6;
   void clear_num2();
   int32_t num2() const;
   void set_num2(int32_t value);
@@ -312,11 +254,7 @@ class Mensagem final :
   void _internal_set_num2(int32_t value);
   public:
 
-  // optional int32 soma = 9;
-  bool has_soma() const;
-  private:
-  bool _internal_has_soma() const;
-  public:
+  // int32 soma = 7;
   void clear_soma();
   int32_t soma() const;
   void set_soma(int32_t value);
@@ -333,17 +271,14 @@ class Mensagem final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr resp_msg_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nome_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr conteudo_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr resp_conteudo_;
     int32_t id_;
     int32_t num1_;
     int32_t num2_;
     int32_t soma_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_protobuf_2eproto;
@@ -379,17 +314,9 @@ inline void Mensagem::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:protocol.Mensagem.id)
 }
 
-// optional string msg = 2;
-inline bool Mensagem::_internal_has_msg() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool Mensagem::has_msg() const {
-  return _internal_has_msg();
-}
+// string msg = 2;
 inline void Mensagem::clear_msg() {
   _impl_.msg_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& Mensagem::msg() const {
   // @@protoc_insertion_point(field_get:protocol.Mensagem.msg)
@@ -398,7 +325,7 @@ inline const std::string& Mensagem::msg() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void Mensagem::set_msg(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000001u;
+ 
  _impl_.msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:protocol.Mensagem.msg)
 }
@@ -411,32 +338,22 @@ inline const std::string& Mensagem::_internal_msg() const {
   return _impl_.msg_.Get();
 }
 inline void Mensagem::_internal_set_msg(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000001u;
+  
   _impl_.msg_.Set(value, GetArenaForAllocation());
 }
 inline std::string* Mensagem::_internal_mutable_msg() {
-  _impl_._has_bits_[0] |= 0x00000001u;
+  
   return _impl_.msg_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Mensagem::release_msg() {
   // @@protoc_insertion_point(field_release:protocol.Mensagem.msg)
-  if (!_internal_has_msg()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* p = _impl_.msg_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.msg_.IsDefault()) {
-    _impl_.msg_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
+  return _impl_.msg_.Release();
 }
 inline void Mensagem::set_allocated_msg(std::string* msg) {
   if (msg != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
+    
   } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
+    
   }
   _impl_.msg_.SetAllocated(msg, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -447,85 +364,9 @@ inline void Mensagem::set_allocated_msg(std::string* msg) {
   // @@protoc_insertion_point(field_set_allocated:protocol.Mensagem.msg)
 }
 
-// optional string resp_msg = 3;
-inline bool Mensagem::_internal_has_resp_msg() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline bool Mensagem::has_resp_msg() const {
-  return _internal_has_resp_msg();
-}
-inline void Mensagem::clear_resp_msg() {
-  _impl_.resp_msg_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline const std::string& Mensagem::resp_msg() const {
-  // @@protoc_insertion_point(field_get:protocol.Mensagem.resp_msg)
-  return _internal_resp_msg();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Mensagem::set_resp_msg(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000002u;
- _impl_.resp_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:protocol.Mensagem.resp_msg)
-}
-inline std::string* Mensagem::mutable_resp_msg() {
-  std::string* _s = _internal_mutable_resp_msg();
-  // @@protoc_insertion_point(field_mutable:protocol.Mensagem.resp_msg)
-  return _s;
-}
-inline const std::string& Mensagem::_internal_resp_msg() const {
-  return _impl_.resp_msg_.Get();
-}
-inline void Mensagem::_internal_set_resp_msg(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.resp_msg_.Set(value, GetArenaForAllocation());
-}
-inline std::string* Mensagem::_internal_mutable_resp_msg() {
-  _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.resp_msg_.Mutable(GetArenaForAllocation());
-}
-inline std::string* Mensagem::release_resp_msg() {
-  // @@protoc_insertion_point(field_release:protocol.Mensagem.resp_msg)
-  if (!_internal_has_resp_msg()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* p = _impl_.resp_msg_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.resp_msg_.IsDefault()) {
-    _impl_.resp_msg_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void Mensagem::set_allocated_resp_msg(std::string* resp_msg) {
-  if (resp_msg != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  _impl_.resp_msg_.SetAllocated(resp_msg, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.resp_msg_.IsDefault()) {
-    _impl_.resp_msg_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:protocol.Mensagem.resp_msg)
-}
-
-// optional string nome = 4;
-inline bool Mensagem::_internal_has_nome() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline bool Mensagem::has_nome() const {
-  return _internal_has_nome();
-}
+// string nome = 3;
 inline void Mensagem::clear_nome() {
   _impl_.nome_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline const std::string& Mensagem::nome() const {
   // @@protoc_insertion_point(field_get:protocol.Mensagem.nome)
@@ -534,7 +375,7 @@ inline const std::string& Mensagem::nome() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void Mensagem::set_nome(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000004u;
+ 
  _impl_.nome_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:protocol.Mensagem.nome)
 }
@@ -547,32 +388,22 @@ inline const std::string& Mensagem::_internal_nome() const {
   return _impl_.nome_.Get();
 }
 inline void Mensagem::_internal_set_nome(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  
   _impl_.nome_.Set(value, GetArenaForAllocation());
 }
 inline std::string* Mensagem::_internal_mutable_nome() {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  
   return _impl_.nome_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Mensagem::release_nome() {
   // @@protoc_insertion_point(field_release:protocol.Mensagem.nome)
-  if (!_internal_has_nome()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000004u;
-  auto* p = _impl_.nome_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.nome_.IsDefault()) {
-    _impl_.nome_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
+  return _impl_.nome_.Release();
 }
 inline void Mensagem::set_allocated_nome(std::string* nome) {
   if (nome != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
+    
   } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
+    
   }
   _impl_.nome_.SetAllocated(nome, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -583,17 +414,9 @@ inline void Mensagem::set_allocated_nome(std::string* nome) {
   // @@protoc_insertion_point(field_set_allocated:protocol.Mensagem.nome)
 }
 
-// optional string conteudo = 5;
-inline bool Mensagem::_internal_has_conteudo() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
-  return value;
-}
-inline bool Mensagem::has_conteudo() const {
-  return _internal_has_conteudo();
-}
+// string conteudo = 4;
 inline void Mensagem::clear_conteudo() {
   _impl_.conteudo_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline const std::string& Mensagem::conteudo() const {
   // @@protoc_insertion_point(field_get:protocol.Mensagem.conteudo)
@@ -602,7 +425,7 @@ inline const std::string& Mensagem::conteudo() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void Mensagem::set_conteudo(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000008u;
+ 
  _impl_.conteudo_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:protocol.Mensagem.conteudo)
 }
@@ -615,32 +438,22 @@ inline const std::string& Mensagem::_internal_conteudo() const {
   return _impl_.conteudo_.Get();
 }
 inline void Mensagem::_internal_set_conteudo(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  
   _impl_.conteudo_.Set(value, GetArenaForAllocation());
 }
 inline std::string* Mensagem::_internal_mutable_conteudo() {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  
   return _impl_.conteudo_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Mensagem::release_conteudo() {
   // @@protoc_insertion_point(field_release:protocol.Mensagem.conteudo)
-  if (!_internal_has_conteudo()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000008u;
-  auto* p = _impl_.conteudo_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.conteudo_.IsDefault()) {
-    _impl_.conteudo_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
+  return _impl_.conteudo_.Release();
 }
 inline void Mensagem::set_allocated_conteudo(std::string* conteudo) {
   if (conteudo != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000008u;
+    
   } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
+    
   }
   _impl_.conteudo_.SetAllocated(conteudo, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -651,85 +464,9 @@ inline void Mensagem::set_allocated_conteudo(std::string* conteudo) {
   // @@protoc_insertion_point(field_set_allocated:protocol.Mensagem.conteudo)
 }
 
-// optional string resp_conteudo = 6;
-inline bool Mensagem::_internal_has_resp_conteudo() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
-  return value;
-}
-inline bool Mensagem::has_resp_conteudo() const {
-  return _internal_has_resp_conteudo();
-}
-inline void Mensagem::clear_resp_conteudo() {
-  _impl_.resp_conteudo_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000010u;
-}
-inline const std::string& Mensagem::resp_conteudo() const {
-  // @@protoc_insertion_point(field_get:protocol.Mensagem.resp_conteudo)
-  return _internal_resp_conteudo();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Mensagem::set_resp_conteudo(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000010u;
- _impl_.resp_conteudo_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:protocol.Mensagem.resp_conteudo)
-}
-inline std::string* Mensagem::mutable_resp_conteudo() {
-  std::string* _s = _internal_mutable_resp_conteudo();
-  // @@protoc_insertion_point(field_mutable:protocol.Mensagem.resp_conteudo)
-  return _s;
-}
-inline const std::string& Mensagem::_internal_resp_conteudo() const {
-  return _impl_.resp_conteudo_.Get();
-}
-inline void Mensagem::_internal_set_resp_conteudo(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
-  _impl_.resp_conteudo_.Set(value, GetArenaForAllocation());
-}
-inline std::string* Mensagem::_internal_mutable_resp_conteudo() {
-  _impl_._has_bits_[0] |= 0x00000010u;
-  return _impl_.resp_conteudo_.Mutable(GetArenaForAllocation());
-}
-inline std::string* Mensagem::release_resp_conteudo() {
-  // @@protoc_insertion_point(field_release:protocol.Mensagem.resp_conteudo)
-  if (!_internal_has_resp_conteudo()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000010u;
-  auto* p = _impl_.resp_conteudo_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.resp_conteudo_.IsDefault()) {
-    _impl_.resp_conteudo_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void Mensagem::set_allocated_resp_conteudo(std::string* resp_conteudo) {
-  if (resp_conteudo != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000010u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000010u;
-  }
-  _impl_.resp_conteudo_.SetAllocated(resp_conteudo, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.resp_conteudo_.IsDefault()) {
-    _impl_.resp_conteudo_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:protocol.Mensagem.resp_conteudo)
-}
-
-// optional int32 num1 = 7;
-inline bool Mensagem::_internal_has_num1() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
-  return value;
-}
-inline bool Mensagem::has_num1() const {
-  return _internal_has_num1();
-}
+// int32 num1 = 5;
 inline void Mensagem::clear_num1() {
   _impl_.num1_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline int32_t Mensagem::_internal_num1() const {
   return _impl_.num1_;
@@ -739,7 +476,7 @@ inline int32_t Mensagem::num1() const {
   return _internal_num1();
 }
 inline void Mensagem::_internal_set_num1(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000020u;
+  
   _impl_.num1_ = value;
 }
 inline void Mensagem::set_num1(int32_t value) {
@@ -747,17 +484,9 @@ inline void Mensagem::set_num1(int32_t value) {
   // @@protoc_insertion_point(field_set:protocol.Mensagem.num1)
 }
 
-// optional int32 num2 = 8;
-inline bool Mensagem::_internal_has_num2() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
-  return value;
-}
-inline bool Mensagem::has_num2() const {
-  return _internal_has_num2();
-}
+// int32 num2 = 6;
 inline void Mensagem::clear_num2() {
   _impl_.num2_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline int32_t Mensagem::_internal_num2() const {
   return _impl_.num2_;
@@ -767,7 +496,7 @@ inline int32_t Mensagem::num2() const {
   return _internal_num2();
 }
 inline void Mensagem::_internal_set_num2(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000040u;
+  
   _impl_.num2_ = value;
 }
 inline void Mensagem::set_num2(int32_t value) {
@@ -775,17 +504,9 @@ inline void Mensagem::set_num2(int32_t value) {
   // @@protoc_insertion_point(field_set:protocol.Mensagem.num2)
 }
 
-// optional int32 soma = 9;
-inline bool Mensagem::_internal_has_soma() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
-  return value;
-}
-inline bool Mensagem::has_soma() const {
-  return _internal_has_soma();
-}
+// int32 soma = 7;
 inline void Mensagem::clear_soma() {
   _impl_.soma_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline int32_t Mensagem::_internal_soma() const {
   return _impl_.soma_;
@@ -795,7 +516,7 @@ inline int32_t Mensagem::soma() const {
   return _internal_soma();
 }
 inline void Mensagem::_internal_set_soma(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000080u;
+  
   _impl_.soma_ = value;
 }
 inline void Mensagem::set_soma(int32_t value) {

@@ -1,25 +1,31 @@
-plugins {
-    id "com.google.protobuf" version "0.8.19"
-    id 'java'
-}
+    plugins {
+        id "com.google.protobuf" version "0.8.19"
+        id 'java'
+    }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+    group 'org.example'
+    version '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-}
+    repositories {
+        mavenCentral()
+    }
 
-protobuf {
-    generatedFilesBaseDir = "$projectDir/src"
-}
+    protobuf {
+        generatedFilesBaseDir = "$projectDir/src"
+    }
 
-dependencies {
-    implementation 'com.google.protobuf:protobuf-java:3.21.6'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
+    dependencies {
+        implementation 'com.google.protobuf:protobuf-java:3.21.6'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    }
 
-test {
-    useJUnitPlatform()
-}
+    test {
+        useJUnitPlatform()
+    }
+
+
+
+
+
+

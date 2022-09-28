@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="protobuf.pb.cc">
+    <ClCompile Include="Protobuf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Protobuf.cpp">
+    <ClCompile Include="protobuf.pb.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

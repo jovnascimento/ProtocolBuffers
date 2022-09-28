@@ -30,22 +30,24 @@ int main(int argc, const char* argv[]) {
         cin >> op;
         cin.ignore(256, '\n');
 
+        protocol::Mensagem* mensagem = new protocol::Mensagem();
         switch (op)
         {
             case 1:
             {
-                // Case para enviar uma mensagem ao servidor
                 // Input do usuário para as variáveis do protobuf
-                mensagem.set_id(1);
+                mensagem->set_id(1);
                 string msg;
                 cout << "Digite a mensagem a ser enviada: ";
                 getline(cin, msg);
-                mensagem.set_msg(msg);
+                mensagem->set_msg(msg);
+
+                cout << "Mensagem em bytes : " << mensagem << endl;
 
                 // Serializa os dados em uma array
-                int size = mensagem.ByteSizeLong();
+                int size = mensagem->ByteSizeLong();
                 char* buffer = new char[size];
-                mensagem.SerializeToArray(buffer, size);
+                mensagem->SerializeToArray(buffer, size);
 
                 // Winsock
                 WSADATA wsaData;
@@ -98,9 +100,9 @@ int main(int argc, const char* argv[]) {
                     numbytes = recv(ConnectSocket, buffer, 4096, 0);
                     buffer[numbytes] = '\0';
                     string data = buffer;
-                    protocol::Mensagem mensagemRecebida;
-                    mensagemRecebida.ParseFromString(data);
-                    cout << "Mensagem recebida do servidor: " << mensagemRecebida.resp_msg() << "\n" << endl;
+                    protocol::Mensagem* mensagemRecebida = new protocol::Mensagem();
+                    mensagemRecebida->ParseFromString(data);
+                    cout << mensagemRecebida->msg() << "\n" << endl;
 
                     google::protobuf::ShutdownProtobufLibrary();
                 }
@@ -110,20 +112,24 @@ int main(int argc, const char* argv[]) {
             {
                 // Case para modificar um arquivo de texto
                 // Input do usuário para as variáveis do protobuf
-                mensagem.set_id(2);
+                mensagem->set_id(2);
                 cout << "Digite o nome do arquivo de texto: ";
                 string nome;
                 getline(cin, nome);
-                mensagem.set_nome(nome);
+                mensagem->set_nome(nome);
                 cout << "Digite o conteudo a ser adicionado: ";
                 string conteudo;
                 getline(cin, conteudo);
-                mensagem.set_conteudo(conteudo);
+                mensagem->set_conteudo(conteudo);
+
+                cout << "Mensagem em bytes : " << mensagem << endl;
 
                 //Serializa os dados em uma array
-                int size = mensagem.ByteSizeLong();
+                int size = mensagem->ByteSizeLong();
                 char* buffer = new char[size];
-                mensagem.SerializeToArray(buffer, size);
+                mensagem->SerializeToArray(buffer, size);
+
+                cout << buffer << endl;
 
                 // Winsock
                 WSADATA wsaData;
@@ -176,11 +182,11 @@ int main(int argc, const char* argv[]) {
                     numbytes = recv(ConnectSocket, buffer, 4096, 0);
                     buffer[numbytes] = '\0';
                     string data = buffer;
-                    protocol::Mensagem mensagemRecebida;
-                    mensagemRecebida.ParseFromString(data);
+                    protocol::Mensagem* mensagemRecebida = new protocol::Mensagem();
+                    mensagemRecebida->ParseFromString(data);
                     cout << "Mensagem recebida do servidor: " << endl;
-                    cout << "Titulo do arquivo: " << mensagemRecebida.nome() << endl;
-                    cout << "Conteudo do arquivo: " << mensagemRecebida.conteudo() << "\n" << endl;
+                    cout << "Titulo do arquivo: " << mensagemRecebida->nome() << endl;
+                    cout << "Conteudo do arquivo: " << mensagemRecebida->conteudo() << "\n" << endl;
 
                     google::protobuf::ShutdownProtobufLibrary();
                 }
@@ -190,22 +196,26 @@ int main(int argc, const char* argv[]) {
             {
                 // Case para função
                 // Input do usuário para as variáveis do protobuf
-                mensagem.set_id(3);
+                mensagem->set_id(3);
                 cout << "Digite o primeiro numero: ";
                 int num1;
                 cin >> num1;
                 cin.ignore(256, '\n');
-                mensagem.set_num1(num1);
+                mensagem->set_num1(num1);
                 cout << "Digite o segundo numero: ";
                 int num2;
                 cin >> num2;
                 cin.ignore(256, '\n');
-                mensagem.set_num2(num2);
+                mensagem->set_num2(num2);
+
+                cout << "Mensagem em bytes : " << mensagem << endl;
 
                 // Serializa os dados em uma array
-                int size = mensagem.ByteSizeLong();
+                int size = mensagem->ByteSizeLong();
                 char* buffer = new char[size];
-                mensagem.SerializeToArray(buffer, size);
+                mensagem->SerializeToArray(buffer, size);
+
+                cout << buffer << endl;
 
                 // Winsock
                 WSADATA wsaData;
@@ -213,6 +223,7 @@ int main(int argc, const char* argv[]) {
                 struct addrinfo* result = NULL,
                     * ptr = NULL,
                     hints;
+
                 int iResult;
 
                 // Inicializa Winsock
@@ -221,6 +232,7 @@ int main(int argc, const char* argv[]) {
                 hints.ai_family = AF_UNSPEC;
                 hints.ai_socktype = SOCK_STREAM;
                 hints.ai_protocol = IPPROTO_TCP;
+                hints.ai_flags = AI_PASSIVE;
 
                 // Define o endereço da conexão
                 iResult = getaddrinfo("localhost", "3000", &hints, &result);
@@ -258,9 +270,9 @@ int main(int argc, const char* argv[]) {
                     numbytes = recv(ConnectSocket, buffer, 4096, 0);
                     buffer[numbytes] = '\0';
                     string data = buffer;
-                    protocol::Mensagem mensagemRecebida;
-                    mensagemRecebida.ParseFromString(data);
-                    cout << "Mensagem recebida do servidor, soma: " << mensagemRecebida.soma() << "\n" << endl;
+                    protocol::Mensagem* mensagemRecebida = new protocol::Mensagem();
+                    mensagemRecebida->ParseFromString(data);
+                    cout << "Mensagem recebida do servidor, soma: " << mensagemRecebida->soma() << "\n" << endl;
 
                     google::protobuf::ShutdownProtobufLibrary();
                 }

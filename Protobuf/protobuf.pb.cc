@@ -23,17 +23,14 @@ namespace _pbi = _pb::internal;
 namespace protocol {
 PROTOBUF_CONSTEXPR Mensagem::Mensagem(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.resp_msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.nome_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.conteudo_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.resp_conteudo_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.id_)*/0
   , /*decltype(_impl_.num1_)*/0
   , /*decltype(_impl_.num2_)*/0
-  , /*decltype(_impl_.soma_)*/0} {}
+  , /*decltype(_impl_.soma_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct MensagemDefaultTypeInternal {
   PROTOBUF_CONSTEXPR MensagemDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -49,7 +46,7 @@ static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_proto
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_protobuf_2eproto = nullptr;
 
 const uint32_t TableStruct_protobuf_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_._has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -57,25 +54,14 @@ const uint32_t TableStruct_protobuf_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.id_),
   PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.msg_),
-  PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.resp_msg_),
   PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.nome_),
   PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.conteudo_),
-  PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.resp_conteudo_),
   PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.num1_),
   PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.num2_),
   PROTOBUF_FIELD_OFFSET(::protocol::Mensagem, _impl_.soma_),
-  ~0u,
-  0,
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 15, -1, sizeof(::protocol::Mensagem)},
+  { 0, -1, -1, sizeof(::protocol::Mensagem)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -83,19 +69,14 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_protobuf_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016protobuf.proto\022\010protocol\"\226\002\n\010Mensagem\022"
-  "\n\n\002id\030\001 \001(\005\022\020\n\003msg\030\002 \001(\tH\000\210\001\001\022\025\n\010resp_ms"
-  "g\030\003 \001(\tH\001\210\001\001\022\021\n\004nome\030\004 \001(\tH\002\210\001\001\022\025\n\010conte"
-  "udo\030\005 \001(\tH\003\210\001\001\022\032\n\rresp_conteudo\030\006 \001(\tH\004\210"
-  "\001\001\022\021\n\004num1\030\007 \001(\005H\005\210\001\001\022\021\n\004num2\030\010 \001(\005H\006\210\001\001"
-  "\022\021\n\004soma\030\t \001(\005H\007\210\001\001B\006\n\004_msgB\013\n\t_resp_msg"
-  "B\007\n\005_nomeB\013\n\t_conteudoB\020\n\016_resp_conteudo"
-  "B\007\n\005_num1B\007\n\005_num2B\007\n\005_somaB\013B\tProtocolo"
-  "b\006proto3"
+  "\n\016protobuf.proto\022\010protocol\"m\n\010Mensagem\022\n"
+  "\n\002id\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\014\n\004nome\030\003 \001(\t\022\020\n"
+  "\010conteudo\030\004 \001(\t\022\014\n\004num1\030\005 \001(\005\022\014\n\004num2\030\006 "
+  "\001(\005\022\014\n\004soma\030\007 \001(\005B\013B\tProtocolob\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_protobuf_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_protobuf_2eproto = {
-    false, false, 328, descriptor_table_protodef_protobuf_2eproto,
+    false, false, 158, descriptor_table_protodef_protobuf_2eproto,
     "protobuf.proto",
     &descriptor_table_protobuf_2eproto_once, nullptr, 0, 1,
     schemas, file_default_instances, TableStruct_protobuf_2eproto::offsets,
@@ -114,31 +95,6 @@ namespace protocol {
 
 class Mensagem::_Internal {
  public:
-  using HasBits = decltype(std::declval<Mensagem>()._impl_._has_bits_);
-  static void set_has_msg(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_resp_msg(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_nome(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_conteudo(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_resp_conteudo(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_num1(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-  static void set_has_num2(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-  static void set_has_soma(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
 };
 
 Mensagem::Mensagem(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -151,40 +107,29 @@ Mensagem::Mensagem(const Mensagem& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   Mensagem* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.msg_){}
-    , decltype(_impl_.resp_msg_){}
+      decltype(_impl_.msg_){}
     , decltype(_impl_.nome_){}
     , decltype(_impl_.conteudo_){}
-    , decltype(_impl_.resp_conteudo_){}
     , decltype(_impl_.id_){}
     , decltype(_impl_.num1_){}
     , decltype(_impl_.num2_){}
-    , decltype(_impl_.soma_){}};
+    , decltype(_impl_.soma_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.msg_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.msg_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_msg()) {
+  if (!from._internal_msg().empty()) {
     _this->_impl_.msg_.Set(from._internal_msg(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.resp_msg_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.resp_msg_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_resp_msg()) {
-    _this->_impl_.resp_msg_.Set(from._internal_resp_msg(), 
       _this->GetArenaForAllocation());
   }
   _impl_.nome_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.nome_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_nome()) {
+  if (!from._internal_nome().empty()) {
     _this->_impl_.nome_.Set(from._internal_nome(), 
       _this->GetArenaForAllocation());
   }
@@ -192,16 +137,8 @@ Mensagem::Mensagem(const Mensagem& from)
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.conteudo_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_conteudo()) {
+  if (!from._internal_conteudo().empty()) {
     _this->_impl_.conteudo_.Set(from._internal_conteudo(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.resp_conteudo_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.resp_conteudo_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_resp_conteudo()) {
-    _this->_impl_.resp_conteudo_.Set(from._internal_resp_conteudo(), 
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.id_, &from._impl_.id_,
@@ -215,25 +152,18 @@ inline void Mensagem::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.msg_){}
-    , decltype(_impl_.resp_msg_){}
+      decltype(_impl_.msg_){}
     , decltype(_impl_.nome_){}
     , decltype(_impl_.conteudo_){}
-    , decltype(_impl_.resp_conteudo_){}
     , decltype(_impl_.id_){0}
     , decltype(_impl_.num1_){0}
     , decltype(_impl_.num2_){0}
     , decltype(_impl_.soma_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.msg_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.msg_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.resp_msg_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.resp_msg_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.nome_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -242,10 +172,6 @@ inline void Mensagem::SharedCtor(
   _impl_.conteudo_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.conteudo_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.resp_conteudo_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.resp_conteudo_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -261,10 +187,8 @@ Mensagem::~Mensagem() {
 inline void Mensagem::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.msg_.Destroy();
-  _impl_.resp_msg_.Destroy();
   _impl_.nome_.Destroy();
   _impl_.conteudo_.Destroy();
-  _impl_.resp_conteudo_.Destroy();
 }
 
 void Mensagem::SetCachedSize(int size) const {
@@ -277,37 +201,17 @@ void Mensagem::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
-    if (cached_has_bits & 0x00000001u) {
-      _impl_.msg_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _impl_.resp_msg_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _impl_.nome_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000008u) {
-      _impl_.conteudo_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000010u) {
-      _impl_.resp_conteudo_.ClearNonDefaultToEmpty();
-    }
-  }
-  _impl_.id_ = 0;
-  if (cached_has_bits & 0x000000e0u) {
-    ::memset(&_impl_.num1_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.soma_) -
-        reinterpret_cast<char*>(&_impl_.num1_)) + sizeof(_impl_.soma_));
-  }
-  _impl_._has_bits_.Clear();
+  _impl_.msg_.ClearToEmpty();
+  _impl_.nome_.ClearToEmpty();
+  _impl_.conteudo_.ClearToEmpty();
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.soma_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.soma_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Mensagem::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
@@ -320,7 +224,7 @@ const char* Mensagem::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // optional string msg = 2;
+      // string msg = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_msg();
@@ -330,19 +234,9 @@ const char* Mensagem::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // optional string resp_msg = 3;
+      // string nome = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_resp_msg();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "protocol.Mensagem.resp_msg"));
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string nome = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_nome();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -350,9 +244,9 @@ const char* Mensagem::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // optional string conteudo = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // string conteudo = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_conteudo();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -360,38 +254,25 @@ const char* Mensagem::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // optional string resp_conteudo = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          auto str = _internal_mutable_resp_conteudo();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "protocol.Mensagem.resp_conteudo"));
-        } else
-          goto handle_unusual;
-        continue;
-      // optional int32 num1 = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          _Internal::set_has_num1(&has_bits);
+      // int32 num1 = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _impl_.num1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int32 num2 = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          _Internal::set_has_num2(&has_bits);
+      // int32 num2 = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _impl_.num2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int32 soma = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          _Internal::set_has_soma(&has_bits);
+      // int32 soma = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _impl_.soma_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -413,7 +294,6 @@ const char* Mensagem::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
     CHK_(ptr != nullptr);
   }  // while
 message_done:
-  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -433,8 +313,8 @@ uint8_t* Mensagem::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  // optional string msg = 2;
-  if (_internal_has_msg()) {
+  // string msg = 2;
+  if (!this->_internal_msg().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -443,62 +323,42 @@ uint8_t* Mensagem::_InternalSerialize(
         2, this->_internal_msg(), target);
   }
 
-  // optional string resp_msg = 3;
-  if (_internal_has_resp_msg()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_resp_msg().data(), static_cast<int>(this->_internal_resp_msg().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "protocol.Mensagem.resp_msg");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_resp_msg(), target);
-  }
-
-  // optional string nome = 4;
-  if (_internal_has_nome()) {
+  // string nome = 3;
+  if (!this->_internal_nome().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_nome().data(), static_cast<int>(this->_internal_nome().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "protocol.Mensagem.nome");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_nome(), target);
+        3, this->_internal_nome(), target);
   }
 
-  // optional string conteudo = 5;
-  if (_internal_has_conteudo()) {
+  // string conteudo = 4;
+  if (!this->_internal_conteudo().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_conteudo().data(), static_cast<int>(this->_internal_conteudo().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "protocol.Mensagem.conteudo");
     target = stream->WriteStringMaybeAliased(
-        5, this->_internal_conteudo(), target);
+        4, this->_internal_conteudo(), target);
   }
 
-  // optional string resp_conteudo = 6;
-  if (_internal_has_resp_conteudo()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_resp_conteudo().data(), static_cast<int>(this->_internal_resp_conteudo().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "protocol.Mensagem.resp_conteudo");
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_resp_conteudo(), target);
-  }
-
-  // optional int32 num1 = 7;
-  if (_internal_has_num1()) {
+  // int32 num1 = 5;
+  if (this->_internal_num1() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_num1(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_num1(), target);
   }
 
-  // optional int32 num2 = 8;
-  if (_internal_has_num2()) {
+  // int32 num2 = 6;
+  if (this->_internal_num2() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_num2(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_num2(), target);
   }
 
-  // optional int32 soma = 9;
-  if (_internal_has_soma()) {
+  // int32 soma = 7;
+  if (this->_internal_soma() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_soma(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_soma(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -517,66 +377,47 @@ size_t Mensagem::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
-    // optional string msg = 2;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_msg());
-    }
-
-    // optional string resp_msg = 3;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_resp_msg());
-    }
-
-    // optional string nome = 4;
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_nome());
-    }
-
-    // optional string conteudo = 5;
-    if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_conteudo());
-    }
-
-    // optional string resp_conteudo = 6;
-    if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_resp_conteudo());
-    }
-
+  // string msg = 2;
+  if (!this->_internal_msg().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg());
   }
+
+  // string nome = 3;
+  if (!this->_internal_nome().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_nome());
+  }
+
+  // string conteudo = 4;
+  if (!this->_internal_conteudo().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_conteudo());
+  }
+
   // int32 id = 1;
   if (this->_internal_id() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
-  if (cached_has_bits & 0x000000e0u) {
-    // optional int32 num1 = 7;
-    if (cached_has_bits & 0x00000020u) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num1());
-    }
-
-    // optional int32 num2 = 8;
-    if (cached_has_bits & 0x00000040u) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num2());
-    }
-
-    // optional int32 soma = 9;
-    if (cached_has_bits & 0x00000080u) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_soma());
-    }
-
+  // int32 num1 = 5;
+  if (this->_internal_num1() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num1());
   }
+
+  // int32 num2 = 6;
+  if (this->_internal_num2() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num2());
+  }
+
+  // int32 soma = 7;
+  if (this->_internal_soma() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_soma());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -595,38 +436,26 @@ void Mensagem::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTO
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_msg(from._internal_msg());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_set_resp_msg(from._internal_resp_msg());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_set_nome(from._internal_nome());
-    }
-    if (cached_has_bits & 0x00000008u) {
-      _this->_internal_set_conteudo(from._internal_conteudo());
-    }
-    if (cached_has_bits & 0x00000010u) {
-      _this->_internal_set_resp_conteudo(from._internal_resp_conteudo());
-    }
+  if (!from._internal_msg().empty()) {
+    _this->_internal_set_msg(from._internal_msg());
+  }
+  if (!from._internal_nome().empty()) {
+    _this->_internal_set_nome(from._internal_nome());
+  }
+  if (!from._internal_conteudo().empty()) {
+    _this->_internal_set_conteudo(from._internal_conteudo());
   }
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
-  if (cached_has_bits & 0x000000e0u) {
-    if (cached_has_bits & 0x00000020u) {
-      _this->_impl_.num1_ = from._impl_.num1_;
-    }
-    if (cached_has_bits & 0x00000040u) {
-      _this->_impl_.num2_ = from._impl_.num2_;
-    }
-    if (cached_has_bits & 0x00000080u) {
-      _this->_impl_.soma_ = from._impl_.soma_;
-    }
-    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  if (from._internal_num1() != 0) {
+    _this->_internal_set_num1(from._internal_num1());
+  }
+  if (from._internal_num2() != 0) {
+    _this->_internal_set_num2(from._internal_num2());
+  }
+  if (from._internal_soma() != 0) {
+    _this->_internal_set_soma(from._internal_soma());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -647,14 +476,9 @@ void Mensagem::InternalSwap(Mensagem* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.msg_, lhs_arena,
       &other->_impl_.msg_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.resp_msg_, lhs_arena,
-      &other->_impl_.resp_msg_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.nome_, lhs_arena,
@@ -663,10 +487,6 @@ void Mensagem::InternalSwap(Mensagem* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.conteudo_, lhs_arena,
       &other->_impl_.conteudo_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.resp_conteudo_, lhs_arena,
-      &other->_impl_.resp_conteudo_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Mensagem, _impl_.soma_)

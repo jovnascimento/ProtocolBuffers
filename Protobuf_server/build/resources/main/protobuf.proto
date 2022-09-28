@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package protocol;
+
+option java_outer_classname = "Protocolo";
+
+message Mensagem {
+	int32 id = 1;
+	string msg = 2;
+	string nome = 3;
+	string conteudo = 4;
+	int32 num1 = 5;
+	int32 num2 = 6;
+	int32 soma = 7;
+}
